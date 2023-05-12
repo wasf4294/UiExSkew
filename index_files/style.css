@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body{
+    /* 기본설정 */
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    line-height: 1.5em;
+    font-weight: 300;
+    background-color: #181818;
+    /* 센터링 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+a{
+    color: #222;
+    text-decoration: none;
+}
+
+.container{
+    /* 
+    포지션 속성을 이용한 센터링
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+}
+.app-ui {
+    /* border: 1px solid red; */
+    width: 360px;
+    height: 640px;
+    /* transform은 한줄로 
+    이유: 속성이 덮어져버림  */
+    transform: rotate(-30deg) skewX(20deg);
+    position: relative;
+    /* box-shadow x y 퍼짐정도 */
+    box-shadow: 0 0 20px #ffffff38;
+    transition: 0.5s;
+    background-color: #ffffff86;
+}
+.app-ui:hover {
+    box-shadow: -50px 100px 20px #ffffff6c;
+}
+.app-ui img {
+
+    /* ui의 겹침을 위해 position 사용 */
+    position: absolute;
+    /* transition이 뭔지 */
+    transition: 0.5s;
+    opacity: 0;
+}
+.app-ui .first{
+    position: absolute;
+    transform: 0.5s;
+    opacity: 0.8;
+}
+.app-ui:hover img:nth-child(1)  {
+    /* transform을 사용하기 위해 x축 y축 두 개 다 입력해야한다. */
+    transform: translate(40px, -40px);
+    opacity: 0.2;
+}
+.app-ui:hover img:nth-child(2)  {
+    
+    transform: translate(80px, -80px);
+    opacity: 0.4;
+}
+.app-ui:hover img:nth-child(3)  {
+    
+    transform: translate(120px, -120px);
+    opacity: 0.8;
+}
+.app-ui:hover img:nth-child(4)  {
+    
+    transform: translate(160px, -160px);
+    opacity: 1;
+}
